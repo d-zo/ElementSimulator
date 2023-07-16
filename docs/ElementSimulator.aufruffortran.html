@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ElementSimulator.aufruffortran</title>
+<style type="text/css">
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ElementSimulator.html" class="white">ElementSimulator</a>.aufruffortran</strong></td>
+<td class="extra"><a href=".">index</a><br></td></tr></table>
+    <p><span class="code">aufruffortran.py&nbsp;&nbsp;&nbsp;v0.1<br>
+2019-12&nbsp;Dominik&nbsp;Zobel</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-Fortran_Dateivorbereitung"><strong>Fortran_Dateivorbereitung</strong></a>(einstellungen, optionen, routinennamen)</dt><dd><span class="code">Bereite&nbsp;die&nbsp;Fortran-Quelldateien&nbsp;vor,&nbsp;d.h.&nbsp;ersetze&nbsp;Platzhalter&nbsp;mit&nbsp;sinnvollen&nbsp;Werten,&nbsp;damit<br>
+alle&nbsp;Eingabedateien&nbsp;anschliessend&nbsp;kompiliert&nbsp;und&nbsp;ausgefuehrt&nbsp;werden&nbsp;koennen.&nbsp;Je&nbsp;nach&nbsp;gewaehlten<br>
+einstellungen&nbsp;und&nbsp;optionen&nbsp;werden&nbsp;mehrere&nbsp;Dateien&nbsp;(fuer&nbsp;mehrere&nbsp;Routinen)&nbsp;erzeugt.<br>
+Gibt&nbsp;None&nbsp;bei&nbsp;Fehlern&nbsp;zurueck&nbsp;oder&nbsp;eine&nbsp;Liste&nbsp;von&nbsp;Eintraegen&nbsp;mit&nbsp;dem&nbsp;Muster<br>
+(dateiname,&nbsp;routine,&nbsp;routinentyp).</span></dd></dl>
+ <dl><dt><a name="-Fortran_Kompilieren"><strong>Fortran_Kompilieren</strong></a>(einstellungen, optionen, dateien_und_routinen)</dt><dd><span class="code">Kompiliert&nbsp;die&nbsp;uebergebene&nbsp;datei&nbsp;mit&nbsp;der&nbsp;dazugehoerigen&nbsp;routine&nbsp;vom&nbsp;Typ&nbsp;routinentyp.<br>
+Die&nbsp;richtigen&nbsp;Compileroptionen&nbsp;werden&nbsp;aus&nbsp;den&nbsp;einstellungen&nbsp;ermittelt.&nbsp;Es&nbsp;wird&nbsp;eine&nbsp;ausfuehrbare<br>
+Datei&nbsp;(mit&nbsp;aktuellertest&nbsp;im&nbsp;Namen)&nbsp;erstellt.&nbsp;Gibt&nbsp;True&nbsp;zurueck,&nbsp;wenn&nbsp;alles&nbsp;erfolgreich&nbsp;kompiliert<br>
+werden&nbsp;kann,&nbsp;ansonsten&nbsp;False.</span></dd></dl>
+ <dl><dt><a name="-Fortran_Simulation"><strong>Fortran_Simulation</strong></a>(einstellungen, dateien_und_routinen)</dt><dd><span class="code">Ruft&nbsp;alle&nbsp;notwendigen&nbsp;Funktionen&nbsp;auf,&nbsp;um&nbsp;die&nbsp;Quelldateien&nbsp;fuer&nbsp;einen&nbsp;externen&nbsp;Fortran-Aufruf<br>
+vorzubereiten,&nbsp;den&nbsp;Aufruf&nbsp;auszufuehren&nbsp;und&nbsp;die&nbsp;Ergebnisse&nbsp;auszuwerten.</span></dd></dl>
+</td></tr></table>
+</body></html>

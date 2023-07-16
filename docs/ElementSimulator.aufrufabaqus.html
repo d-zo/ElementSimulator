@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ElementSimulator.aufrufabaqus</title>
+<style type="text/css">
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ElementSimulator.html" class="white">ElementSimulator</a>.aufrufabaqus</strong></td>
+<td class="extra"><a href=".">index</a><br></td></tr></table>
+    <p><span class="code">aufrufabaqus.py&nbsp;&nbsp;&nbsp;v0.3<br>
+2021-07&nbsp;Dominik&nbsp;Zobel</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-Abaqus_CAE_Joberstellung"><strong>Abaqus_CAE_Joberstellung</strong></a>(einstellungen, dateien_und_routinen)</dt><dd><span class="code">Fuehre&nbsp;alle&nbsp;in&nbsp;dateien_und_routinen&nbsp;aufgelisteten&nbsp;Python-Skripte&nbsp;in&nbsp;Abaqus/CAE&nbsp;aus,&nbsp;um&nbsp;daraus<br>
+Jobs&nbsp;in&nbsp;Form&nbsp;von&nbsp;Input-Dateien&nbsp;zu&nbsp;erstellen.</span></dd></dl>
+ <dl><dt><a name="-Abaqus_Dateivorbereitung"><strong>Abaqus_Dateivorbereitung</strong></a>(einstellungen, optionen, routinennamen)</dt><dd><span class="code">Bereite&nbsp;die&nbsp;Abaqus-Skripte&nbsp;vor,&nbsp;d.h.&nbsp;ersetze&nbsp;Platzhalter&nbsp;mit&nbsp;sinnvollen&nbsp;Werten,&nbsp;damit<br>
+alle&nbsp;Eingabedateien&nbsp;anschliessend&nbsp;in&nbsp;Abaqus&nbsp;ausgefuehrt&nbsp;werden&nbsp;koennen.&nbsp;Je&nbsp;nach&nbsp;gewaehlten<br>
+einstellungen&nbsp;und&nbsp;optionen&nbsp;werden&nbsp;mehrere&nbsp;Dateien&nbsp;(fuer&nbsp;mehrere&nbsp;Routinen)&nbsp;erzeugt.<br>
+Gibt&nbsp;None&nbsp;bei&nbsp;Fehlern&nbsp;zurueck&nbsp;oder&nbsp;eine&nbsp;Liste&nbsp;von&nbsp;Eintraegen&nbsp;mit&nbsp;dem&nbsp;Muster<br>
+(dateiname,&nbsp;routine,&nbsp;routinentyp).</span></dd></dl>
+ <dl><dt><a name="-Abaqus_Simulation"><strong>Abaqus_Simulation</strong></a>(einstellungen, dateien_und_routinen)</dt><dd><span class="code">Fuehre&nbsp;die&nbsp;eigentliche&nbsp;Simulation&nbsp;in&nbsp;Abaqus&nbsp;anhand&nbsp;der&nbsp;vorbereiteten&nbsp;Dateien&nbsp;aus<br>
+dateien_und_routinen&nbsp;durch.&nbsp;Nach&nbsp;jeder&nbsp;Simulation&nbsp;werden&nbsp;mit&nbsp;Abaqus/CAE&nbsp;und&nbsp;einem&nbsp;Python-Skript<br>
+die&nbsp;Ergebnisse&nbsp;aus&nbsp;den&nbsp;odb-Dateien&nbsp;extrahiert.</span></dd></dl>
+</td></tr></table>
+</body></html>

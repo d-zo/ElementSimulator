@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module ElementSimulator.programmausfuehrung</title>
+<style type="text/css">
+body {
+    background-color: #f0f0f8;
+}
+
+table.heading tr {
+    background-color: #7799ee;
+}
+
+.decor {
+    color: #ffffff;
+}
+
+.title-decor {
+    background-color: #ffc8d8;
+    color: #000000;
+}
+
+.pkg-content-decor {
+    background-color: #aa55cc;
+}
+
+.index-decor {
+    background-color: #ee77aa;
+}
+
+.functions-decor {
+    background-color: #eeaa77;
+}
+
+.data-decor {
+    background-color: #55aa55;
+}
+
+.author-decor {
+    background-color: #7799ee;
+}
+
+.credits-decor {
+    background-color: #7799ee;
+}
+
+.error-decor {
+    background-color: #bb0000;
+}
+
+.grey {
+    color: #909090;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.repr {
+    color: #c040c0;
+}
+
+table.heading tr td.title {
+    vertical-align: bottom;
+}
+
+table.heading tr td.extra {
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.heading-text {
+    font-family: helvetica, arial;
+}
+
+.bigsection {
+    font-size: larger;
+}
+
+.title {
+    font-size: x-large;
+}
+
+.code {
+    font-family: monospace;
+}
+
+table {
+    width: 100%;
+    border-spacing : 0;
+    border-collapse : collapse;
+    border: 0;
+}
+
+td {
+    padding: 2;
+}
+
+td.section-title {
+    vertical-align: bottom;
+}
+
+td.multicolumn {
+    width: 25%;
+    vertical-align: bottom;
+}
+
+td.singlecolumn {
+    width: 100%;
+}
+</style>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="ElementSimulator.html" class="white">ElementSimulator</a>.programmausfuehrung</strong></td>
+<td class="extra"><a href=".">index</a><br></td></tr></table>
+    <p><span class="code">programmausfuehrung.py&nbsp;&nbsp;&nbsp;v0.2<br>
+2019-12&nbsp;Dominik&nbsp;Zobel</span></p>
+<p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-ABQ_Programmausfuehrung"><strong>ABQ_Programmausfuehrung</strong></a>(befehl, nachricht_abbruch, nachricht_fehler, laufzeit=600)</dt><dd><span class="code">Erwartet&nbsp;als&nbsp;befehl&nbsp;einen&nbsp;Abaqus-Aufruf&nbsp;mit&nbsp;einer&nbsp;Option&nbsp;job=...<br>
+Fuehrt&nbsp;wie&nbsp;Programmausfuehrung&nbsp;einen&nbsp;Systemaufruf&nbsp;durch,&nbsp;aber&nbsp;gibt&nbsp;dem&nbsp;Prozess&nbsp;nur&nbsp;eine<br>
+maximale&nbsp;laufzeit&nbsp;(in&nbsp;Sekunden).&nbsp;Diese&nbsp;Funktion&nbsp;extrahiert&nbsp;den&nbsp;Jobnamen&nbsp;aus&nbsp;befehl&nbsp;und<br>
+untersucht&nbsp;waehrend&nbsp;der&nbsp;Laufzeit,&nbsp;ob&nbsp;eine&nbsp;Datei&nbsp;&lt;job&gt;.sta&nbsp;vorhanden&nbsp;ist.&nbsp;Falls&nbsp;die&nbsp;Datei<br>
+existiert,&nbsp;wird&nbsp;nach&nbsp;Schluesselbegriffen&nbsp;wie&nbsp;"error"&nbsp;oder&nbsp;"COMPLETED"&nbsp;gesucht,&nbsp;um&nbsp;zu&nbsp;ermitteln,<br>
+ob&nbsp;ein&nbsp;Aufruf&nbsp;fehlgeschlagen&nbsp;ist&nbsp;und&nbsp;sich&nbsp;nicht&nbsp;automatisch&nbsp;beendet&nbsp;(v.a.&nbsp;in&nbsp;nicht&nbsp;offiziell<br>
+unterstuetzen&nbsp;Linux-Distributionen&nbsp;wie&nbsp;Ubuntu&nbsp;moeglich).</span></dd></dl>
+ <dl><dt><a name="-Programmausfuehrung"><strong>Programmausfuehrung</strong></a>(befehl, nachricht_abbruch, nachricht_fehler)</dt><dd><span class="code">Fuehrt&nbsp;mit&nbsp;dem&nbsp;uebergebenen&nbsp;befehl&nbsp;einen&nbsp;Systemaufruf&nbsp;durch.&nbsp;Wenn&nbsp;der&nbsp;Aufruf&nbsp;erfolgreich&nbsp;war,<br>
+gibt&nbsp;die&nbsp;Funktion&nbsp;True&nbsp;zurueck,&nbsp;sonst&nbsp;False.&nbsp;Bei&nbsp;Misserfolg&nbsp;wird&nbsp;nachricht_abbruch&nbsp;ausgegeben,<br>
+wenn&nbsp;der&nbsp;Rueckgabewert&nbsp;einer&nbsp;nicht&nbsp;erfolgreichen&nbsp;Ausfuehrung&nbsp;entspricht&nbsp;oder&nbsp;nachricht_fehler,<br>
+wenn&nbsp;die&nbsp;Ausfuehrung&nbsp;selbst&nbsp;nicht&nbsp;erfolgreich&nbsp;war.</span></dd></dl>
+</td></tr></table>
+</body></html>

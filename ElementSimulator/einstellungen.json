@@ -1,0 +1,76 @@
+{
+   "Global": {
+      "max. Iterationen": 50000,
+      "Startzeit [s]": 0.0001,
+      "Startinkrement [s]": 0.0001,
+      "Abaqus Simulationsdauer [s]": 0.001,
+      "Anzahl Ausgaben Abaqus": 2000,
+      "max. Laufzeit Abaqus [s]": 300
+   },
+   "Fortran": {
+      "Compiler": "Intel Fortran",
+      "Compiler Argumente": {
+         "xmat.f":                 [["D_XMAT", "fpp", "free"], []],
+         "hypo_vhypo_2b.f":        [["D_HYPO", "fpp"], []],
+         "hypo_st_tp_11b.f":       [["D_TP", "fpp"], []],
+         "plaxis_umat_hypoplas.f": [["D_PLAXIS", "fpp"], []],
+         "uibk_hypo_wf.f":         [["D_UIBK", "fpp"], ["ni_utils.f"]]
+      }
+   },
+   "Ausgabe": {
+      "Plotreihenfolge": [
+         ["hypo_vhypo_2b.f", "ABQS09"],
+         ["hypo_st_tp_11b.f", "ABQS04"],
+         ["plaxis_umat_hypoplas.f", "PLX09"],
+         ["uibk_hypo_wf.f", "ABQS02"],
+         ["xmat.f", "xMat"]
+      ]
+   },
+   "Material": {
+      "Name": "HYPO-VW96",
+      "Bezeichnung": "Hamburger Sand 03",
+      "Anfangsporenzahl e_0 [-]": 0.65,
+      "Einbaudichte [g/cm^3]": 1.754,
+      "Winkel Grenzbedingung [Grad]": 33,
+      "Intergranulare Dehnung h [-]": [0.0, -0.0001, 0.0, 0.0, 0.0, 0.0],
+      "Intergr. Dehnung aktiv": false,
+      "max. Anzahl Parameter": 16,
+      "max. Anzahl Statusvariablen": 20
+   },
+   "Oedometerversuch": {
+      "Probenhoehe [mm]": 20.0,
+      "Probenradius [mm]": 35.0,
+      "Druckverlauf [kPa]": [-10.0, -100.0, -50.0, -200.0]
+   },
+   "Triaxialversuch": {
+      "Probenhoehe [mm]": 125.0,
+      "Probenradius [mm]": 25.0,
+      "max. Stauchung [%]": 20.0,
+      "max. Druck [kPa]": -100.0
+   },
+   "Einfachscherversuch": {
+      "Probenhoehe [mm]": 15.0,
+      "Probenradius [mm]": 25.0,
+      "max. seitliche Auslenkung [%]": 20.0,
+      "max. Druck [kPa]": -50.0,
+      "Scherzyklen": 1
+   },
+   "Impulsantwort": {
+      "Eingangsdruecke [kPa]": [-100.0, -100.0, -100.0, 0.0, 0.0, 0.0],
+      "Dehnungsinkremente [-]": [-1.0, -1.0, -1.0, 0.0, 0.0, 0.0]
+   },
+   "Spannungspfade": {
+      "off_Referenzspannung [kPa]": [-600.0, -300.0, -300.0, 0.0, 0.0, 0.0],
+      "Referenzspannung [kPa]": [-400.0, -400.0, -400.0, 0.0, 0.0, 0.0],
+      "Grenzspannungen [kPa]": [-1000.0, -5.0],
+      "Dehnungsinkremente [-]": -1.0,
+      "Winkelunterteilungen": 12
+   },
+   "Antwortellipsen": {
+      "Spannungspunkte [kPa]": [[-176.0, -62.0, -62.0, 0.0, 0.0, 0.0], [-138.0, -81.0, -81.0, 0.0, 0.0, 0.0], [-100.0, -100.0, -100.0, 0.0, 0.0, 0.0], [-72.0, -114.0, -114.0, 0.0, 0.0, 0.0], [-44.0, -128.0, -128.0, 0.0, 0.0, 0.0],
+                                [-352.0, -124.0, -124.0, 0.0, 0.0, 0.0], [-276.0, -162.0, -162.0, 0.0, 0.0, 0.0], [-200.0, -200.0, -200.0, 0.0, 0.0, 0.0], [-144.0, -228.0, -228.0, 0.0, 0.0, 0.0], [-88.0, -256.0, -256.0, 0.0, 0.0, 0.0]],
+      "Max. Spannung [kPa]": -350.0,
+      "Dehnungsinkrement [-]": -5.0,
+      "Winkelunterteilungen": 64
+   }
+}

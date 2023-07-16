@@ -1,0 +1,14 @@
+{
+   "Linux": {
+      "Abaqus": "abaqus",
+      "Python": "python",
+      "Intel Fortran": "ifort",
+      "GNU Fortran": "gfortran"
+   },
+   "Windows": {
+      "Abaqus": "\"C:\\Path\\to\\SIMULIA\\Commands\\abq2020.bat\"",
+      "Python": "\"C:\\Path\\to\\python.exe\"",
+      "Intel Fortran": "\"C:\\Path\\to\\Intel\\oneAPI\\compiler\\latest\\windows\\bin\\intel64\\ifort.exe\"",
+      "GNU Fortran": "\"C:\\Path\\to\\gfortran.exe\""
+   }
+}

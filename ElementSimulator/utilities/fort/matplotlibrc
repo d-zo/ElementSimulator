@@ -1,0 +1,42 @@
+# matplotlibrc example
+
+
+# Bildgeometrie
+figure.dpi: 300
+figure.figsize: 4.7637795, 2.7559055
+figure.subplot.wspace: 0.25
+figure.subplot.hspace: 0.6
+
+
+# Fonts
+font.family: sans-serif
+figure.titlesize: 11.2
+axes.titlesize: 11.2
+font.size: 8.8
+axes.labelsize: 8.8
+legend.fontsize: 6.9
+xtick.labelsize: 6.9
+ytick.labelsize: 6.9
+
+
+# Liniendicken
+axes.linewidth: 0.285
+xtick.major.width: 0.285
+xtick.minor.width: 0.285
+ytick.major.width: 0.285
+ytick.minor.width: 0.285
+grid.linewidth: 0.285
+patch.linewidth: 0.285
+lines.linewidth: 0.569
+
+
+# Grid
+axes.grid: True
+axes.grid.which: both
+grid.color: 808080
+grid.linestyle: :
+
+
+# Muster
+lines.dotted_pattern: 2, 5
+lines.dashed_pattern: 6, 6
