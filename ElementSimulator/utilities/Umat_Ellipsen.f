@@ -129,10 +129,10 @@ program Response_envelopes_test
 
          ! Add offset to start with isotropic compression
          inpstrain = refstrain*[ &
-            cos(angle+isocomp_offset), sin(angle+isocomp_offset)/sqrt(2.0_dp), sin(angle+isocomp_offset)/2.0_dp, &
+            cos(angle+isocomp_offset), sin(angle+isocomp_offset)/sqrt(2.0_dp), sin(angle+isocomp_offset)/sqrt(2.0_dp), &
             0.0_dp, 0.0_dp, 0.0_dp]*dt
          intergranular_strain = ref_intergranular_strain*[ &
-            cos(angle+isocomp_offset), sin(angle+isocomp_offset)/sqrt(2.0_dp), sin(angle+isocomp_offset)/2.0_dp, &
+            cos(angle+isocomp_offset), sin(angle+isocomp_offset)/sqrt(2.0_dp), sin(angle+isocomp_offset)/sqrt(2.0_dp), &
             0.0_dp, 0.0_dp, 0.0_dp]
 
          call Prepare_State(constitutive_model_name=check_materialname(1:9), voidratio=voidratio, &

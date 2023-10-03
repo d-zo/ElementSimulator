@@ -23,7 +23,7 @@ plotausgabe.py   v0.1
 
 
 # -------------------------------------------------------------------------------------------------
-def Plot_Hinzufuegen(ax, xwerte, ywerte, label, xlabel='', ylabel='', xlim=[], ylim=[],
+def Plot_Hinzufuegen(pyplot, ax, xwerte, ywerte, label, xlabel='', ylabel='', xlim=[], ylim=[],
    xscale='linear', fontsize=8, idx_plot=0, num_plots=1, legpos='upper right', marknum=1000):
    """Plotte einen weiteren Datensatz mit xwerte und ywerte und der Bezeichnung label in die
    uebergebene Plotflaeche ax. Der Stil wird anhand der Laufnummer idx_plot von erwarteten
@@ -35,8 +35,6 @@ def Plot_Hinzufuegen(ax, xwerte, ywerte, label, xlabel='', ylabel='', xlim=[], y
    dargestellt werden soll, kann das ueber xscale angepasst werden. Die Schriftgroesse wird mit
    fontsize angepasst.
    """
-   from matplotlib import pyplot
-   #
    # Starte immer von der dunkelsten Farbe
    #plotfarbe = pyplot.cm.viridis([float(idx_plot-1)/num_plots])[0]
    plotfarbe = pyplot.cm.viridis([1/num_plots*(0.5 + idx_plot)])[0]
@@ -85,6 +83,17 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
    und enthaelt Informationen, mit welchen Optionen die jeweiligen Tests durchgefuehrt worden sind.
    """
    #
+   if ('Zahlendarstellung' in einstellungen['Ausgabe']):
+      if (einstellungen['Ausgabe']['Zahlendarstellung'] == 'de'):
+         import locale
+         #
+         locale.setlocale(locale.LC_NUMERIC, 'de_DE.UTF-8')
+         locale.setlocale(locale.LC_ALL, 'de_DE.UTF-8')
+         locale._override_localeconv = {
+            'decimal_point': ',',
+            'thousands_sep': ''
+         }
+   #
    import matplotlib
    from matplotlib import pyplot
    from math import floor, sqrt, pi, sin, tan, atan, atan2
@@ -105,7 +114,7 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
    #
    # Fixwerte
    dpi = 300
-   inch = 2.54; # [cm]
+   inch = 2.54 # [cm]
    #
    fig1 = pyplot.figure(figsize=(plotbreite/inch, plothoehe/inch), dpi=dpi)
    ax1 = fig1.gca()
@@ -129,7 +138,7 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
    #matplotlib.rcParams['ytick.major.width'] = linienbreite
    #matplotlib.rcParams['ytick.minor.width'] = linienbreite
    #
-   dateiendung = '.pdf'; # pdf oder png
+   dateiendung = '.pdf' # pdf oder png
    plotnamen = []
    #
    for idx_datei, datei in enumerate(dateien):
@@ -163,7 +172,7 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
          ywerte = [t[1] for t in tabelle]
          xlim = [-max(einstellungen['Oedometerversuch']['Druckverlauf [kPa]']),
                  -min(einstellungen['Oedometerversuch']['Druckverlauf [kPa]'])]
-         Plot_Hinzufuegen(ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
+         Plot_Hinzufuegen(pyplot=pyplot, ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
             xlabel='Spannung $-T_1$ [kPa]', ylabel='Porenzahl $e$ [-]', xlim=xlim, xscale='log',
             fontsize=fontsize, idx_plot=idx_datei, num_plots=len(dateien))
          plotnamen = ['Oedo_' + programm + dateiendung]
@@ -172,11 +181,11 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
          xwerte = [-t[0] for t in tabelle]
          ywerte = [-t[1] for t in tabelle]
          xlim = [0.0, einstellungen['Triaxialversuch']['max. Stauchung [%]']]
-         Plot_Hinzufuegen(ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
+         Plot_Hinzufuegen(pyplot=pyplot, ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
             xlabel='Axiale Dehnung $-\\varepsilon_1$ [\\%]', ylabel='Volumetrische Dehnung $\\varepsilon_V$ [\\%]', xlim=xlim,
             fontsize=fontsize, idx_plot=idx_datei, num_plots=len(dateien), legpos='lower left')
          ywerte = [t[2] for t in tabelle]
-         Plot_Hinzufuegen(ax=ax2, xwerte=xwerte, ywerte=ywerte, label=label,
+         Plot_Hinzufuegen(pyplot=pyplot, ax=ax2, xwerte=xwerte, ywerte=ywerte, label=label,
             xlabel='Axiale Dehnung $-\\varepsilon_1$ [\\%]', ylabel='Dev. Spannung $-\\left(T_1 - T_3\\right)$ [kPa]', xlim=xlim,
             fontsize=fontsize, idx_plot=idx_datei, num_plots=len(dateien), legpos='lower right')
          plotnamen = ['Triax_' + programm + '_vol' + dateiendung,
@@ -192,11 +201,11 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
          else:
             xlim = [-max_auslenkung, max_auslenkung]
          #
-         Plot_Hinzufuegen(ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
+         Plot_Hinzufuegen(pyplot=pyplot, ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
             xlabel='Scherdehnung $-\\varepsilon_{12}$ [\\%]', ylabel='Axiale Dehnung $-\\varepsilon_1$ [\\%]', xlim=xlim, fontsize=fontsize,
             idx_plot=idx_datei, num_plots=len(dateien))
          ywerte = [t[2] for t in tabelle]
-         Plot_Hinzufuegen(ax=ax2, xwerte=xwerte, ywerte=ywerte, label=label,
+         Plot_Hinzufuegen(pyplot=pyplot, ax=ax2, xwerte=xwerte, ywerte=ywerte, label=label,
             xlabel='Scherdehnung $-\\varepsilon_{12}$ [\\%]', ylabel='Scherspannung $-T_{12}$ [kPa]', xlim=xlim, fontsize=fontsize,
             idx_plot=idx_datei, num_plots=len(dateien))
          plotnamen = ['Scher_' + programm + '_axial' + dateiendung,
@@ -205,7 +214,7 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
       elif (aktuellertest == 'impuls'):
          xwerte = [t[0] for t in tabelle]
          ywerte = [t[6] for t in tabelle]
-         Plot_Hinzufuegen(ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
+         Plot_Hinzufuegen(pyplot=pyplot, ax=ax1, xwerte=xwerte, ywerte=ywerte, label=label,
             xlabel='Spannung $-T_1$ [kPa]', ylabel='Porenzahl $e$ [-]', fontsize=fontsize,
             idx_plot=idx_datei, num_plots=len(dateien))
          plotnamen = ['Impuls_' + programm + dateiendung]
@@ -248,6 +257,12 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
                if (-(wert-xdaten[datensatz_mitte][0]) > delta2):
                   idx_labeloffset = min(idx_labeloffset, idx)
                   break
+            #
+            shrink_fak = 0.85
+            for werte in xdaten:
+               num_elems = len(werte)
+               if (idx_labeloffset >= num_elems):
+                  idx_labeloffset = round(shrink_fak*(num_elems-1))
          #
          else:
             maxwert = einstellungen['Antwortellipsen']['Max. Spannung [kPa]']
@@ -314,9 +329,9 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
                del ydaten[idx_plot][0]
                ydaten[idx_plot] += [ydaten[idx_plot][0]]
             #
-            Plot_Hinzufuegen(ax=ax1, xwerte=xdaten[idx_plot], ywerte=ydaten[idx_plot], label=plotlabel,
-               xlabel='Spannung $-\sqrt{2}T_2$ [kPa]', ylabel='Spannung $-T_1$ [kPa]', fontsize=fontsize,
-               idx_plot=idx_datei, num_plots=len(dateien), marknum=16)
+            Plot_Hinzufuegen(pyplot=pyplot, ax=ax1, xwerte=xdaten[idx_plot], ywerte=ydaten[idx_plot],
+               label=plotlabel, xlabel='Spannung $-\sqrt{2}T_2$ [kPa]', ylabel='Spannung $-T_1$ [kPa]',
+               fontsize=fontsize, idx_plot=idx_datei, num_plots=len(dateien), marknum=16)
             #ax1.plot(xdaten[idx_plot], ydaten[idx_plot], label=plotlabel, color=plotfarbe, linewidth=linienbreite,
             #   marker=marker, markersize=2.4, markeredgecolor=[0.0, 0.0, 0.0], markevery=20)
             if ((aktuellertest == 'pfade') and (idx_datei == len(dateien)-1)):
@@ -337,7 +352,7 @@ def Plot_Ergebnisse(dateien, namen, aktuellertest, programm, einstellungen):
                ypos_text = ydaten[idx_plot][idx_labeloffset]
                #
                temptext = ax1.text(xpos_text, ypos_text, str(int(labels[idx_plot])), fontsize=6, ha='center', va='center',
-                  rotation=winkel);#, color=line.get_color())
+                  rotation=winkel)#, color=line.get_color())
                temptext.set_bbox(dict(facecolor='white', edgecolor='white',
                   boxstyle='square,pad=0.15', mutation_aspect=0.2))
          #

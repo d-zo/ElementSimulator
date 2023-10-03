@@ -63,7 +63,7 @@ program Response_envelopes_test
 
          ! Add offset to start with isotropic compression
          inpstrain = refstrain*[ &
-            cos(angle+isocomp_offset), sin(angle+isocomp_offset)/sqrt(2.0_dp), sin(angle+isocomp_offset)/2.0_dp, &
+            cos(angle+isocomp_offset), sin(angle+isocomp_offset)/sqrt(2.0_dp), sin(angle+isocomp_offset)/sqrt(2.0_dp), &
             0.0_dp, 0.0_dp, 0.0_dp]*dt
 
          call xmat_console(materialname, size(materialparameters), materialparameters, size(inpstate), &
