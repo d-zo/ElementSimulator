@@ -39,3 +39,4 @@ from .parameter import *
 __author__ = 'Dominik Zobel'
 __version__ = '0.2.5'
 __package__ = 'ElementSimulator'
+

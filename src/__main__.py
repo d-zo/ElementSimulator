@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-__main__.py   v0.4
-2021-11 Dominik Zobel
+__main__.py   v0.5
+2023-09 Dominik Zobel
 """
 
 # Copyright 2017-2023 Dominik Zobel.
@@ -29,32 +29,32 @@ __package__ = 'ElementSimulator'
 
 # -------------------------------------------------------------------------------------------------
 def main(argumente):
-   """Diese Funtion startet den Elementsimulator und ruft alle notwendigen Funktionen auf.
-   """
-   from .optionsverarbeitung import Optionen_verarbeiten
-   from .einstellungsverarbeitung import Einstellungen_Laden
-   from .parameter import Informationsausgabe
-   from .programmsteuerung import Umgebung_Vorbereiten, Programmaufruf_Verarbeiten
-   #
-   print('Starte ElementSimulator')
-   #
-   optionen = Optionen_verarbeiten(argumente=argumente)
-   if (optionen is None):
-      return
-   #
-   einstellungen = Einstellungen_Laden(programm=optionen['prog'])
-   if (not einstellungen):
-      return
-   #
-   if (not Umgebung_Vorbereiten(einstellungen=einstellungen, versuch=optionen['test'],
-      programm=optionen['prog'])):
-      return
-   #
-   if (not Informationsausgabe(einstellungen=einstellungen, optionen=optionen)):
-      return
-   #
-   Programmaufruf_Verarbeiten(einstellungen=einstellungen, optionen=optionen)
-#
+    """Diese Funtion startet den Elementsimulator und ruft alle notwendigen Funktionen auf.
+    """
+    from .optionsverarbeitung import Optionen_verarbeiten
+    from .einstellungsverarbeitung import Einstellungen_Laden
+    from .parameter import Informationsausgabe
+    from .programmsteuerung import Umgebung_Vorbereiten, Programmaufruf_Verarbeiten
+
+    print('Starte ElementSimulator')
+
+    optionen = Optionen_verarbeiten(argumente=argumente)
+    if (optionen is None):
+        return
+
+    einstellungen = Einstellungen_Laden(programm=optionen['prog'])
+    if (not einstellungen):
+        return
+
+    if (not Umgebung_Vorbereiten(einstellungen=einstellungen, versuch=optionen['test'],
+        programm=optionen['prog'])):
+        return
+
+    if (not Informationsausgabe(einstellungen=einstellungen, optionen=optionen)):
+        return
+
+    Programmaufruf_Verarbeiten(einstellungen=einstellungen, optionen=optionen)
+
 
 
 # -------------------------------------------------------------------------------------------------
@@ -62,10 +62,10 @@ import sys
 
 
 if (sys.version_info[0] < 3):
-   print('ElementSimulator benötigt mindestens Python3')
+    print('ElementSimulator benötigt mindestens Python3')
 else:
-   if (__name__ == '__main__'):
-      main(sys.argv)
-   else:
-      main(sys.argv)
-#
+    if (__name__ == '__main__'):
+        main(sys.argv)
+    else:
+        main(sys.argv)
+

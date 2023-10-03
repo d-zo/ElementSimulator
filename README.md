@@ -8,6 +8,9 @@ as well as response envelopes and stress paths.
 It was created at the Institute of Geotechnical Engineering
 at the Hamburg University of Technology.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8157106.svg)](https://doi.org/10.5281/zenodo.8157106)
+
+
 
 Installation
 ------------
